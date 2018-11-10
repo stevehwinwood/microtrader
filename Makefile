@@ -8,6 +8,9 @@ ORG_NAME ?= dockerproductionaws
 REPO_NAME ?= microtrader
 TEST_REPO_NAME ?= microtrader-dev
 TEST_DIR ?= build/test-results/junit/
+DOCKER_REGISTRY ?= 381908082407.dkr.ecr.eu-west-2.amazonaws.com
+AWS_ACCOUNT_ID ?= 381908082407
+DOCKER_LOGIN_EXPRESSION := eval $$(aws ecr get-login --registry-ids $(AWS_ACCOUNT_ID) --no-include-email)
 
 # Release settings
 export HTTP_PORT ?= 8000
